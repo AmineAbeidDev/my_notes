@@ -1,11 +1,13 @@
 import 'package:my_notes/constants/database.dart';
 
 class Note {
+  final String? title;
   final String content;
   final String created;
   final String lastUpdate;
 
   Note({
+    this.title,
     required this.content,
     required this.created,
     required this.lastUpdate,
@@ -14,6 +16,7 @@ class Note {
   // columns in the database.
   Map<String, dynamic> toMap() {
     return {
+      'title': title,
       'content': content,
       'created': created,
       'last_update': lastUpdate,
@@ -24,6 +27,6 @@ class Note {
   // each dog when using the print statement.
   @override
   String toString() {
-    return '$dbName{content: $content, created: $created, last_update: $lastUpdate}';
+    return '$dbName{title: $title, content: $content, created: $created, last_update: $lastUpdate}';
   }
 }

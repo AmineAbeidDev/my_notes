@@ -1,11 +1,10 @@
-import 'dart:developer';
-
+import 'package:my_notes/storage/local_storage/local_storage_manager.dart';
 import 'package:my_notes/constants/colors.dart';
-import 'package:my_notes/constants/database.dart';
-import 'package:my_notes/local_storage/database.dart';
-import 'package:my_notes/local_storage/local_storage_manager.dart';
 import 'package:my_notes/view/note_view.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer';
+
+import 'package:my_notes/view/notes_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -31,8 +30,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: Scaffold(
-        body: NoteView(),
-        backgroundColor: mainColor,
+        body: NotesView(),
+        backgroundColor: primaryColor,
       ),
     );
   }

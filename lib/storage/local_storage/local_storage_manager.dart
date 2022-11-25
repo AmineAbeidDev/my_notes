@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:my_notes/constants/database.dart';
-import 'package:my_notes/local_storage/database.dart';
+import 'package:my_notes/storage/local_storage/database.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -81,11 +81,12 @@ class LocalStorage {
   //! converts map of notes to a list
   Future<List<Note>> notesToList() async {
     final db = database;
-    final List<Map<String, dynamic>> maps = await db.query('dogs');
+    final List<Map<String, dynamic>> maps = await db.query(tableName);
 
     // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
       return Note(
+        title: maps[i]['title'],
         content: maps[i]['content'],
         created: maps[i]['created'],
         lastUpdate: maps[i]['last_update'],

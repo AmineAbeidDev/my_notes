@@ -41,12 +41,12 @@ class _LoginViewState extends State<LoginView> {
           margin: const EdgeInsets.fromLTRB(25, 0, 25, 0),
           padding: const EdgeInsets.only(left: 10),
           child: TextField(
-            cursorColor: mainColor,
+            cursorColor: primaryColor,
             controller: _email,
             decoration: const InputDecoration(
               icon: Icon(
                 Icons.email,
-                color: mainColor,
+                color: primaryColor,
               ),
               hintText: 'email',
               border: InputBorder.none,
@@ -68,7 +68,7 @@ class _LoginViewState extends State<LoginView> {
             decoration: const InputDecoration(
               icon: Icon(
                 Icons.lock,
-                color: mainColor,
+                color: primaryColor,
               ),
               hintText: 'password',
               border: InputBorder.none,
@@ -81,7 +81,7 @@ class _LoginViewState extends State<LoginView> {
         TextButton(
           style: TextButton.styleFrom(
             fixedSize: const Size(220, 60),
-            backgroundColor: buttonColor,
+            backgroundColor: secondaryColor,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(40),
@@ -92,7 +92,7 @@ class _LoginViewState extends State<LoginView> {
           child: const Text(
             'Login',
             style: TextStyle(
-              color: mainColor,
+              color: primaryColor,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
