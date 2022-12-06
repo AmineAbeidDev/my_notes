@@ -1,7 +1,6 @@
-import 'dart:developer';
-
-import 'package:flutter/material.dart';
+import 'package:my_notes/reusables/note_view_reusables.dart';
 import 'package:my_notes/constants/colors.dart';
+import 'package:flutter/material.dart';
 
 class NoteView extends StatefulWidget {
   const NoteView({super.key});
@@ -43,7 +42,7 @@ class _NoteViewState extends State<NoteView> {
           ),
         ),
         ColoredBox(
-          color: lighterPrimaryColor,
+          color: darkerSecondaryColor,
           child: SizedBox(
             height: 20,
             width: MediaQuery.of(context).size.width,
@@ -79,31 +78,16 @@ class _NoteViewState extends State<NoteView> {
               )),
           padding: const EdgeInsets.all(3),
           margin: const EdgeInsets.all(10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children:  [
-              ColoredBox(
-                  color: secondaryColor,
-                  child: const SizedBox(
-                    height: 26,
-                    width: 26,
-                    child: Icon(Icons.text_format),
-                  )),
-              ColoredBox(
-                  color: secondaryColor,
-                  child: const SizedBox(
-                    height: 26,
-                    width: 26,
-                    child: Icon(Icons.text_increase),
-                  )),
-              ColoredBox(
-                  color: secondaryColor,
-                  child: const SizedBox(
-                    height: 26,
-                    width: 26,
-                    child: Icon(Icons.font_download_outlined),
-                  )),
-            ],
+          child: Container(
+            color: secondaryColor,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                boxIcon(Icons.text_format),
+                boxIcon(Icons.text_increase),
+                boxIcon(Icons.font_download_outlined),
+              ],
+            ),
           ),
         )
       ],

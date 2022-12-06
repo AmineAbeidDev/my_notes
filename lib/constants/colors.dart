@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const primaryColor = Color.fromARGB(255, 33, 33, 33);
-const lighterPrimaryColor = Color.fromARGB(255, 50, 50, 50);
-const darkerSecondaryColor = Color.fromARGB(255, 13, 115, 119);
-final secondaryColor = Colors.amber.shade400;
+const primaryColor = Color(0xFF212121);
+const lighterPrimaryColor = Color(0xFF323232);
+const darkerSecondaryColor = Color(0xFFFFBF00);
+const secondaryColor = Color(0xFFFFCA28);
 
 // class LoginView extends StatefulWidget {
 //   const LoginView({super.key});
