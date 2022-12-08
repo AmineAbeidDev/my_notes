@@ -1,3 +1,4 @@
+import 'package:my_notes/painters/page_painter.dart';
 import 'package:my_notes/reusables/note_view_reusables.dart';
 import 'package:my_notes/constants/colors.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +13,7 @@ class NoteView extends StatefulWidget {
 class _NoteViewState extends State<NoteView> {
   late final TextEditingController _titleController;
   late final TextEditingController _textController;
+  PagePainter obj = PagePainter();
 
   @override
   void initState() {
@@ -46,16 +48,17 @@ class _NoteViewState extends State<NoteView> {
             hintText: 'Enter your title here',
             hintStyle: TextStyle(color: Colors.white70),
             contentPadding: EdgeInsets.symmetric(horizontal: 10),
-            border: OutlineInputBorder(gapPadding: 15),
+            // border: OutlineInputBorder(),
             focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.zero),
               borderSide: BorderSide(color: secondaryColor),
             ),
           ),
         ),
         ColoredBox(
-          color: lighterPrimaryColor,
+          color: darkerSecondaryColor,
           child: SizedBox(
-            height: 20,
+            height: 15,
             width: MediaQuery.of(context).size.width,
           ),
         ),
@@ -69,20 +72,20 @@ class _NoteViewState extends State<NoteView> {
             controller: _textController,
             keyboardType: TextInputType.multiline,
             maxLines: null,
-
+            expands: true,
             decoration: const InputDecoration(
               hintText: 'Start writing your note!',
               hintStyle: TextStyle(color: Colors.white70),
               border: InputBorder.none,
               contentPadding: EdgeInsets.fromLTRB(
                 15,
-                0,
                 15,
-                0,
+                15,
+                15,
               ),
             ),
             style: const TextStyle(
-              fontSize: 20,
+              fontSize: 18,
               color: Colors.white,
             ),
           ),
