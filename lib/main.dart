@@ -29,9 +29,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: NoteView(),
-        backgroundColor: primaryColor,
+      home: SafeArea(
+        child: Scaffold(
+          primary: false,
+          body: NoteView(),
+          backgroundColor: primaryColor,
+        ),
       ),
     );
   }
